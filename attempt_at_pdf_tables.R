@@ -14,6 +14,15 @@ out1[[1]]
 out1[[2]]
 
 out1[[3]]
+
+
+names(out1[[1]]) 
+names(out1[[1]]) <- NULL
+names(out1[[1]]) 
+
+out1[[1]]
+
+
 #remotes::install_github("ropensci/pdftools")
 
 
