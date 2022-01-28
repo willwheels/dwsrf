@@ -67,10 +67,10 @@ download_one_state_pdf <- function(pdf_link) {
 purrr::walk(state_pdf_links$state_pdf_url,download_one_state_pdf)
 
 
-all_state_pdfs <- list.files(here::here("state_pdfs"))
+all_state_pdfs <- list.files(here::here("state_pdfs"), full.names = TRUE)
 
 all_state_pdfs_df <- purrr::map_dfr(all_state_pdfs, 
-                                    function(x) pdftools::pdf_info(here::here("state_pdfs", x)),
+                                    pdftools::pdf_info,
                                     .id = "state")
 
 summary(all_state_pdfs_df$pages)
