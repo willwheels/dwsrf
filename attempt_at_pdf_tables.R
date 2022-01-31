@@ -1,13 +1,15 @@
 #remotes::install_github(c("ropensci/tabulizerjars", "ropensci/tabulizer"))
-                        
-                        
-
+                    
 library(tabulizer)
 
 
-f <- here::here("california_dw20.pdf")
+f <- here::here("state_pdfs", "california_dw20.pdf")
+
+
 
 out1 <- extract_tables(f, pages = 1, output = "data.frame")
+    
+                        
 
 out1[[1]]
 

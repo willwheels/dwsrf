@@ -1,23 +1,43 @@
 library(rvest)
-
 library(dplyr)
 
 ## got the following by clicking through https://www.epa.gov/dwsrf/drinking-water-state-revolving-fund-national-information-management-system-reports
 
 ## nothing for DC, apparently
 
-## run once
+filename_part_one <- "https://www.epa.gov/dwsrf/drinking-water-state-revolving-fund-program-information-state-"
 
-# state_names <- stringr::str_to_lower(state.name) %>%
-#   stringr::str_replace_all(" ", "-")
-# 
-# state_links <- tibble(state_name = state.name, state_pdf_url = rep("", length(state.name)))
-# PR <- tibble(state_name = "Puerto Rico", state_pdf_url = "")
-# state_links <- rbind(state_links, PR)
-# 
-# write.csv(state_links, "state_links.csv")
+state_names <- stringr::str_to_lower(state.name) %>%
+  stringr::str_replace_all(" ", "-")
 
 
+
+## no longer works b/c of change to website, FML
+download_one_state <- function(state_name) {
+  
+  print(state_name)
+  
+  state_dwsrf_url <- paste0(filename_part_one, state_name)
+  
+  state_dwsrf_page <- read_html(state_dwsrf_url)
+  
+  state_dwsrf_page_urls <- state_dwsrf_page %>%
+    html_elements("a") %>%
+    html_attr("href")
+  
+  state_dwsrf_page_return <- tibble(state = state_name, state_url = state_dwsrf_url,
+                                       state_pdf_url = state_dwsrf_page_urls)
+  
+  state_dwsrf_page_return <- state_dwsrf_page_return %>%
+    filter(stringr::str_detect(state_pdf_url, "pdf"))
+  
+  closeAllConnections()
+  
+  return(state_dwsrf_page_return)
+  
+}
+
+state_pdf_links <- purrr::map_dfr(state_names, download_one_state)
 
 
 download_one_state_pdf <- function(pdf_link) {
