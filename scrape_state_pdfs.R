@@ -3,6 +3,31 @@ library(rvest)
 library(dplyr)
 
 ## got the following by clicking through https://www.epa.gov/dwsrf/drinking-water-state-revolving-fund-national-information-management-system-reports
+# https://www.epa.gov/sites/default/files/2020-11/documents/alabamadw20_0.pdf
+# https://www.epa.gov/sites/default/files/2020-11/documents/alaskadw20.pdf
+# https://www.epa.gov/sites/default/files/2020-11/documents/arizonadw20.pdf
+# https://www.epa.gov/sites/default/files/2020-11/documents/arkansasdw20_0.pdf
+# https://www.epa.gov/sites/default/files/2020-11/documents/california_dw20.pdf
+# https://www.epa.gov/sites/default/files/2020-11/documents/colorado_dw20.pdf
+# https://www.epa.gov/sites/default/files/2020-11/documents/connecticut_dw20.pdf
+# https://www.epa.gov/sites/default/files/2020-11/documents/delaware_dw20.pdf
+# https://www.epa.gov/sites/default/files/2020-11/documents/florida_2020.pdf
+# https://www.epa.gov/sites/default/files/2020-11/documents/georgia_2020.pdf
+# https://www.epa.gov/sites/default/files/2020-11/documents/hawaii2020.pdf
+# https://www.epa.gov/sites/default/files/2020-11/documents/idaho_2020.pdf
+# https://www.epa.gov/sites/default/files/2020-11/documents/illinois2020.pdf
+# https://www.epa.gov/sites/default/files/2020-11/documents/indiana2020.pdf
+# https://www.epa.gov/sites/default/files/2020-11/documents/iowa_2020.pdf
+# https://www.epa.gov/sites/default/files/2020-11/documents/kansas2020.pdf
+# https://www.epa.gov/sites/default/files/2020-11/documents/kentucky.pdf
+# https://www.epa.gov/sites/default/files/2020-11/documents/louisiana2020.pdf
+# https://www.epa.gov/sites/default/files/2020-11/documents/maine2020.pdf
+# https://www.epa.gov/sites/default/files/2020-11/documents/maryland.pdf
+# https://www.epa.gov/sites/default/files/2020-11/documents/massachusetts2020.pdf
+# https://www.epa.gov/sites/default/files/2020-11/documents/michigan2020.pdf
+# https://www.epa.gov/sites/default/files/2020-11/documents/minnesota2020.pdf
+# https://www.epa.gov/sites/default/files/2020-11/documents/mississippi2020.pdf
+# https://www.epa.gov/sites/default/files/2020-11/documents/missouri2020.pdf
 
 ## nothing for DC, apparently
 
